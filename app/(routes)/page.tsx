@@ -1,10 +1,8 @@
-import IndexView from '@/views/IndexView/IndexView';
-
-/**
- * Function representing the HomePage component.
- *
- * @returns HomePage component
- */
-export default function HomePage() {
-  return <IndexView />;
+export default function Home() {
+  return (
+    <main>
+      <h1>Welcome</h1>
+      <p>Your application is ready to be built.</p>
+    </main>
+  );
 }
