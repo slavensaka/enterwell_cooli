@@ -1,11 +1,4 @@
-import Noty from 'noty';
-
-// Overrides the default values
-Noty.overrideDefaults({
-  layout: 'bottomRight',
-  theme: 'metroui',
-  timeout: 0
-});
+import toast from 'react-hot-toast';
 
 export const SUCCESS_TYPE = 'success';
 export const ERROR_TYPE = 'error';
@@ -13,47 +6,33 @@ export const WARNING_TYPE = 'warning';
 export const INFO_TYPE = 'info';
 
 /**
- * Creates the notification.
- *
- * @static
- * @param message Notification message
- * @param type Notification type
- * @returns notification
- */
-function _createNotification(message: string, type: Noty.Type, timeout: number) {
-  // Creats the notification
-  const notification = new Noty({
-    text: message,
-    type,
-    timeout
-  });
-
-  // Returns the notification
-  return notification;
-}
-
-/**
  * Shows the notification.
  *
- * @static
  * @param message Notification message
  * @param type Notification type
- * @returns notification
+ * @param duration Duration in milliseconds (0 = infinite)
+ * @returns toast id
  */
-export function showNotification(message: string, type: Noty.Type, timeout: number = 0) {
-  // Creates and shows the notification
-  const notification = _createNotification(message, type, timeout);
-  notification.show();
+export function showNotification(message: string, type: string, duration: number = 0) {
+  const options = { duration: duration === 0 ? Infinity : duration };
 
-  return notification;
+  switch (type) {
+  case SUCCESS_TYPE:
+    return toast.success(message, options);
+  case ERROR_TYPE:
+    return toast.error(message, options);
+  case WARNING_TYPE:
+  case INFO_TYPE:
+  default:
+    return toast(message, options);
+  }
 }
 
 /**
  * Shows the success notification.
  *
- * @static
  * @param message Success message
- * @returns notification
+ * @returns toast id
  */
 export function showSuccessNotification(message: string) {
   return showNotification(message, SUCCESS_TYPE, 3000);
@@ -62,9 +41,8 @@ export function showSuccessNotification(message: string) {
 /**
  * Shows the error notification.
  *
- * @static
  * @param message Error message
- * @returns notification
+ * @returns toast id
  */
 export function showErrorNotification(message: string) {
   return showNotification(message, ERROR_TYPE);
@@ -73,9 +51,8 @@ export function showErrorNotification(message: string) {
 /**
  * Shows the warning notification.
  *
- * @static
  * @param message Warning message
- * @returns notification
+ * @returns toast id
  */
 export function showWarningNotification(message: string) {
   return showNotification(message, WARNING_TYPE);
@@ -84,9 +61,8 @@ export function showWarningNotification(message: string) {
 /**
  * Shows the info notification.
  *
- * @static
- * @param messageInfo message
- * @returns notification
+ * @param message Info message
+ * @returns toast id
  */
 export function showInfoNotification(message: string) {
   return showNotification(message, INFO_TYPE);
@@ -95,8 +71,7 @@ export function showInfoNotification(message: string) {
 /**
  * Shows the default error notification.
  *
- * @static
- * @returns notification
+ * @returns toast id
  */
 export function showDefaultErrorNotification() {
   return showErrorNotification('Trenutno nije moguće dohvatiti podatke. Osvježite stranicu da biste pokušali ponovno.');

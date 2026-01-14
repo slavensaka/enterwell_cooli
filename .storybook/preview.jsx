@@ -2,9 +2,6 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import NextAppDirEmotionCacheProvider from '../components/providers/ThemeRegistry/EmotionCache';
 
-// Storycap managed mode decorator import
-import { withScreenshot } from 'storycap';
-
 // MUI theme import
 import theme from '../config/theme';
 
@@ -18,7 +15,6 @@ const darkTheme = theme(true);
 
 // Integrating with the MUI by defining a global decorator
 export const decorators = [
-  withScreenshot,
   (Story) => (
     <div className={roboto.className}>
       <NextAppDirEmotionCacheProvider options={{ key: 'storybook-mui', prepend: true }}>
@@ -57,10 +53,5 @@ export const parameters = {
         value: '#3b5998'
       }
     ]
-  },
-  screenshot: {
-    // Global screenshot parameters go here (e.g. viewport)
-    // Parameters can also be defined for each individual story
-    // See more at https://github.com/reg-viz/storycap#managed-mode
   }
 };

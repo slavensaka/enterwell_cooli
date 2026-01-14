@@ -21,7 +21,7 @@ const meta = {
       description: 'The total number of pages.',
       table: {
         type: { summary: 'number' },
-        defaultValue: { summary: 1 }
+        defaultValue: { summary: '1' }
       }
     },
     onChange: {
@@ -44,7 +44,7 @@ const meta = {
       control: { type: 'boolean' },
       table: {
         type: { summary: 'bool' },
-        defaultValue: { summary: false }
+        defaultValue: { summary: 'false' }
       }
     },
     color: {
@@ -70,7 +70,7 @@ const meta = {
       description: 'Number of always visible pages before and after the current page.',
       table: {
         type: { summary: 'number' },
-        defaultValue: { summary: 1 }
+        defaultValue: { summary: '1' }
       }
     },
     page: {
@@ -78,7 +78,7 @@ const meta = {
       description: 'The current page.',
       table: {
         type: { summary: 'number' },
-        defaultValue: { summary: 1 }
+        defaultValue: { summary: '1' }
       }
     },
     showFirstButton: {
@@ -86,7 +86,7 @@ const meta = {
       control: { type: 'boolean' },
       table: {
         type: { summary: 'bool' },
-        defaultValue: { summary: false }
+        defaultValue: { summary: 'false' }
       }
     },
     showLastButton: {
@@ -94,7 +94,7 @@ const meta = {
       control: { type: 'boolean' },
       table: {
         type: { summary: 'boolean' },
-        defaultValue: { summary: false }
+        defaultValue: { summary: 'false' }
       }
     }
   }
