@@ -1,0 +1,236 @@
+[23:45:48.814] [INFO] Storybook upgrade - v10.1.11
+[23:45:48.820] [INFO] Detecting projects...
+[23:45:48.820] [DEBUG] Finding Storybook projects...
+[23:45:50.280] [DEBUG] Found 1 Storybook projects
+[23:45:50.283] [INFO] Detecting projects: 1 projects
+[23:45:50.284] [DEBUG] Getting Storybook data...
+[23:45:50.284] [DEBUG] Getting Storybook info...
+[23:45:50.555] [DEBUG] Loading main config...
+[23:45:50.555] [DEBUG] Getting stories paths...
+[23:45:50.590] [DEBUG] Getting package manager...
+[23:45:51.954] [DEBUG] Getting package.json info for C:/wamp/www/enterwell_cooli/package.json...
+[23:45:51.954] [DEBUG] Getting Storybook version...
+[23:45:51.955] [DEBUG] C:/wamp/www/enterwell_cooli/.storybook - Validating before version... 8.4.7
+[23:45:51.955] [DEBUG] C:/wamp/www/enterwell_cooli/.storybook - Validating upgrade compatibility...
+[23:45:51.955] [DEBUG] C:/wamp/www/enterwell_cooli/.storybook - Fetching NPM version information...
+[23:45:51.955] [DEBUG] Getting CLI versions from NPM for storybook...
+[23:45:51.955] [DEBUG] Executing command: npm info storybook version
+[23:45:51.988] [DEBUG] Getting CLI versions from NPM for storybook@next...
+[23:45:51.988] [DEBUG] Executing command: npm info storybook@next version
+[23:45:53.812] [DEBUG] C:/wamp/www/enterwell_cooli/.storybook - Evaluating blockers...
+[23:45:53.851] [DEBUG] Getting installed version for @storybook/experimental-addon-test...
+[23:45:53.851] [DEBUG] Executing command: npm ls --json --depth=99 2>NUL
+[23:45:57.327] [DEBUG] Executing command: npm ls --json --depth=0 2>NUL
+[23:46:00.793] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm.cmd ls --json --depth=0 2>NUL
+npm error code EINVALIDTAGNAME
+npm error Invalid tag name "2>NUL" of package "2>NUL": Tags may not have any characters that encodeURIComponent encodes.
+npm error A complete log of this run can be found in: C:\Users\slave\AppData\Local\npm-cache\_logs\2026-01-14T22_45_57_767Z-debug-0.log
+{
+  "error": {
+    "code": "EINVALIDTAGNAME",
+    "summary": "Invalid tag name \"2>NUL\" of package \"2>NUL\": Tags may not have any characters that encodeURIComponent encodes.",
+    "detail": ""
+  }
+}
+[23:46:00.793] [INFO] 1 project detected
+[23:46:00.794] [DEBUG] Found 1 valid projects and 0 error projects
+[23:46:00.794] [INFO] Upgrading from [1m8.4.7[22m to [1m10.1.11[22m
+[23:46:00.795] [DEBUG] Starting automigration collection across 1 projects and 19 fixes...
+[23:46:00.795] [INFO] Checking automigrations for C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:00.795] [DEBUG] Processing project: C:/wamp/www/enterwell_cooli/.storybook
+[23:46:00.795] [DEBUG] Checking fix eslintPlugin for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:00.796] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:00.796] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:00.799] [DEBUG] Checking fix addon-mdx-gfm-remove for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:00.799] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:00.799] [DEBUG] Checking fix addon-storysource-code-panel for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:00.800] [DEBUG] Checking fix upgrade-storybook-related-dependencies for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:00.800] [DEBUG] Checking for incompatible storybook packages...
+[23:46:00.800] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:00.803] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:00.803] [DEBUG] Getting installed version for @storybook/addon-essentials...
+[23:46:00.803] [DEBUG] Executing command: npm ls --json --depth=99 2>NUL
+[23:46:00.823] [DEBUG] Getting installed version for @storybook/addon-interactions...
+[23:46:00.823] [DEBUG] Executing command: npm ls --json --depth=99 2>NUL
+[23:46:04.436] [DEBUG] Executing command: npm ls --json --depth=0 2>NUL
+[23:46:04.496] [DEBUG] Executing command: npm ls --json --depth=0 2>NUL
+[23:46:08.330] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm.cmd ls --json --depth=0 2>NUL
+npm error code EINVALIDTAGNAME
+npm error Invalid tag name "2>NUL" of package "2>NUL": Tags may not have any characters that encodeURIComponent encodes.
+npm error A complete log of this run can be found in: C:\Users\slave\AppData\Local\npm-cache\_logs\2026-01-14T22_46_04_944Z-debug-0.log
+{
+  "error": {
+    "code": "EINVALIDTAGNAME",
+    "summary": "Invalid tag name \"2>NUL\" of package \"2>NUL\": Tags may not have any characters that encodeURIComponent encodes.",
+    "detail": ""
+  }
+}
+[23:46:08.330] [DEBUG] Getting CLI versions from NPM for @storybook/addon-essentials...
+[23:46:08.330] [DEBUG] Executing command: npm info @storybook/addon-essentials version
+[23:46:08.399] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm.cmd ls --json --depth=0 2>NUL
+npm error code EINVALIDTAGNAME
+npm error Invalid tag name "2>NUL" of package "2>NUL": Tags may not have any characters that encodeURIComponent encodes.
+npm error A complete log of this run can be found in: C:\Users\slave\AppData\Local\npm-cache\_logs\2026-01-14T22_46_04_979Z-debug-0.log
+{
+  "error": {
+    "code": "EINVALIDTAGNAME",
+    "summary": "Invalid tag name \"2>NUL\" of package \"2>NUL\": Tags may not have any characters that encodeURIComponent encodes.",
+    "detail": ""
+  }
+}
+[23:46:08.399] [DEBUG] Getting CLI versions from NPM for @storybook/addon-interactions...
+[23:46:08.399] [DEBUG] Executing command: npm info @storybook/addon-interactions version
+[23:46:10.313] [DEBUG] Checking fix initial-globals for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.359] [DEBUG] Checking fix addon-globals-api for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.377] [DEBUG] Failed to check fix addon-globals-api for project C:/wamp/www/enterwell_cooli/.storybook.
+[23:46:10.379] [DEBUG] ReferenceError: darkTheme is not defined
+    at eval (eval at getFieldValue (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-DWPXURLN.js:727:23), <anonymous>:1:27)
+    at eval (eval at getFieldValue (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-DWPXURLN.js:727:23), <anonymous>:1:33)
+    at eval (<anonymous>)
+    at ConfigFile.getFieldValue (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-DWPXURLN.js:727:23)
+    at file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:6478:164
+    at Array.forEach (<anonymous>)
+    at checkAddonMigration (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:6477:46)
+    at Object.check (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:6484:84)
+    at async collectAutomigrationsAcrossProjects (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9042:21)
+    at async runAutomigrations (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9209:32)
+[23:46:10.380] [DEBUG] Checking fix addon-a11y-addon-test for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.380] [DEBUG] Checking fix consolidated-imports for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.381] [DEBUG] Checking fix addon-experimental-test for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.381] [DEBUG] Using cached installed version for @storybook/experimental-addon-test...
+[23:46:10.381] [DEBUG] Checking fix rnstorybook-config for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.381] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:10.382] [DEBUG] Checking fix migrate-addon-console for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.382] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:10.382] [DEBUG] Checking fix nextjs-to-nextjs-vite for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.382] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:10.383] [DEBUG] Checking fix remove-addon-interactions for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.383] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:10.383] [DEBUG] Checking fix renderer-to-framework for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.384] [DEBUG] Checking fix remove-essential-addons for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.384] [DEBUG] Using cached package.json for C:\wamp\www\enterwell_cooli\package.json...
+[23:46:10.385] [DEBUG] Checking fix addon-a11y-parameters for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.385] [DEBUG] Checking fix remove-docs-autodocs for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.402] [DEBUG] Checking fix wrap-getAbsolutePath for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.410] [DEBUG] Checking fix fix-faux-esm-require for project C:/wamp/www/enterwell_cooli/.storybook...
+[23:46:10.413] [INFO] 
+Automigrations detected:
+[23:46:10.414] [INFO] [32m[32m✔[32m nextjs-to-nextjs-vite[39m
+[23:46:10.416] [INFO] [32m[32m✔[32m remove-addon-interactions[39m
+[23:46:10.416] [INFO] [32m[32m✔[32m renderer-to-framework[39m
+[23:46:10.416] [INFO] [32m[32m✔[32m remove-essential-addons[39m
+[23:46:10.417] [INFO] [32m[32m✔[32m remove-docs-autodocs[39m
+[23:46:10.417] [INFO] [31m[31m✕[31m addon-globals-api[39m
+[23:46:10.417] [INFO] 1 automigration check failed
+[23:46:10.418] [INFO] Detected automigrations (dry run - no changes will be made):
+[23:46:10.418] [INFO]   - nextjs-to-nextjs-vite (C:/wamp/www/enterwell_cooli/.storybook)
+[23:46:10.418] [INFO]   - remove-addon-interactions (C:/wamp/www/enterwell_cooli/.storybook)
+[23:46:10.419] [INFO]   - renderer-to-framework (C:/wamp/www/enterwell_cooli/.storybook)
+[23:46:10.419] [INFO]   - remove-essential-addons (C:/wamp/www/enterwell_cooli/.storybook)
+[23:46:10.419] [INFO]   - remove-docs-autodocs (C:/wamp/www/enterwell_cooli/.storybook)
+[23:46:10.420] [DEBUG] Completed automigrations for C:/wamp/www/enterwell_cooli/.storybook
+[23:46:10.421] [INFO] Installing dependencies...
+[23:46:10.421] [INFO] Installing dependencies...
+[23:46:10.421] [DEBUG] Executing command: npm install --force
+[23:46:22.870] [ERROR] Installation of dependencies failed! {"error":"Error: Command failed with exit code 1: npm.cmd install --force\nnpm warn using --force Recommended protections disabled.\nnpm warn ERESOLVE overriding peer dependency\nnpm warn ERESOLVE overriding peer dependency\nnpm warn While resolving: mobx-react-lite@4.0.7\nnpm warn Found: react@19.0.0\nnpm warn node_modules/react\nnpm warn   react@\"19.0.0\" from the root project\nnpm warn   21 more (@emotion/react, @emotion/styled, ...)\nnpm warn\nnpm warn Could not resolve dependency:\nnpm warn peer react@\"^16.8.0 || ^17 || ^18\" from mobx-react-lite@4.0.7\nnpm warn node_modules/mobx-react-lite\nnpm warn   mobx-react-lite@\"4.0.7\" from the root project\nnpm warn\nnpm warn Conflicting peer dependency: react@18.3.1\nnpm warn node_modules/react\nnpm warn   peer react@\"^16.8.0 || ^17 || ^18\" from mobx-react-lite@4.0.7\nnpm warn   node_modules/mobx-react-lite\nnpm warn     mobx-react-lite@\"4.0.7\" from the root project\nnpm warn ERESOLVE overriding peer dependency\nnpm warn While resolving: next@16.1.0\nnpm warn Found: @playwright/test@1.50.0\nnpm warn node_modules/@playwright/test\nnpm warn   dev @playwright/test@\"1.50.0\" from the root project\nnpm warn\nnpm warn Could not resolve dependency:\nnpm warn peerOptional @playwright/test@\"^1.51.1\" from next@16.1.0\nnpm warn node_modules/next\nnpm warn   next@\"16.1.0\" from the root project\nnpm warn   1 more (@storybook/nextjs)\nnpm warn\nnpm warn Conflicting peer dependency: @playwright/test@1.57.0\nnpm warn node_modules/@playwright/test\nnpm warn   peerOptional @playwright/test@\"^1.51.1\" from next@16.1.0\nnpm warn   node_modules/next\nnpm warn     next@\"16.1.0\" from the root project\nnpm warn     1 more (@storybook/nextjs)\nnpm warn ERESOLVE overriding peer dependency\nnpm warn ERESOLVE overriding peer dependency\nnpm error code ETARGET\nnpm error notarget No matching version found for @storybook/addon-essentials@9.1.17.\nnpm error notarget In most cases you or one of your dependencies are requesting\nnpm error notarget a package version that doesn't exist.\nnpm error A complete log of this run can be found in: C:\\Users\\slave\\AppData\\Local\\npm-cache\\_logs\\2026-01-14T22_46_10_875Z-debug-0.log\n    at makeError (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:12912:95)\n    at file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:13486:27\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Object.executeTaskWithSpinner (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-GRQFL3SI.js:3701:11)\n    at async NPMProxy.installDependencies (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:11259:5)\n    at async upgrade (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9423:41)\n    at async file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9558:70\n    at async withTelemetry (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)\n    at async Command.<anonymous> (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9554:3)"}
+[23:46:22.870] [ERROR] [31mInstallation of dependencies failed![39m
+[23:46:22.871] [ERROR] [38;2;241;97;97mError: Command failed with exit code 1: npm.cmd install --force
+npm warn using --force Recommended protections disabled.
+npm warn ERESOLVE overriding peer dependency
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: mobx-react-lite@4.0.7
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   react@"19.0.0" from the root project
+npm warn   21 more (@emotion/react, @emotion/styled, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17 || ^18" from mobx-react-lite@4.0.7
+npm warn node_modules/mobx-react-lite
+npm warn   mobx-react-lite@"4.0.7" from the root project
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17 || ^18" from mobx-react-lite@4.0.7
+npm warn   node_modules/mobx-react-lite
+npm warn     mobx-react-lite@"4.0.7" from the root project
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: next@16.1.0
+npm warn Found: @playwright/test@1.50.0
+npm warn node_modules/@playwright/test
+npm warn   dev @playwright/test@"1.50.0" from the root project
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional @playwright/test@"^1.51.1" from next@16.1.0
+npm warn node_modules/next
+npm warn   next@"16.1.0" from the root project
+npm warn   1 more (@storybook/nextjs)
+npm warn
+npm warn Conflicting peer dependency: @playwright/test@1.57.0
+npm warn node_modules/@playwright/test
+npm warn   peerOptional @playwright/test@"^1.51.1" from next@16.1.0
+npm warn   node_modules/next
+npm warn     next@"16.1.0" from the root project
+npm warn     1 more (@storybook/nextjs)
+npm warn ERESOLVE overriding peer dependency
+npm warn ERESOLVE overriding peer dependency
+npm error code ETARGET
+npm error notarget No matching version found for @storybook/addon-essentials@9.1.17.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: C:\Users\slave\AppData\Local\npm-cache\_logs\2026-01-14T22_46_10_875Z-debug-0.log[39m
+    at makeError (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:12912:95)
+    at file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:13486:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.executeTaskWithSpinner (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-GRQFL3SI.js:3701:11)
+    at async NPMProxy.installDependencies (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:11259:5)
+    at async upgrade (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9423:41)
+    at async file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9558:70
+    at async withTelemetry (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)
+    at async Command.<anonymous> (file:///C:/Users/slave/AppData/Local/npm-cache/_npx/6b8babe225378cdd/node_modules/@storybook/cli/dist/_node-chunks/run-4UWMWJJE.js:9554:3)
+[23:46:22.877] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
+[23:46:23.967] [ERROR] Error: Command failed with exit code 1: npm.cmd install --force
+npm warn using --force Recommended protections disabled.
+npm warn ERESOLVE overriding peer dependency
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: mobx-react-lite@4.0.7
+npm warn Found: react@19.0.0
+npm warn node_modules/react
+npm warn   react@"19.0.0" from the root project
+npm warn   21 more (@emotion/react, @emotion/styled, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^16.8.0 || ^17 || ^18" from mobx-react-lite@4.0.7
+npm warn node_modules/mobx-react-lite
+npm warn   mobx-react-lite@"4.0.7" from the root project
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^16.8.0 || ^17 || ^18" from mobx-react-lite@4.0.7
+npm warn   node_modules/mobx-react-lite
+npm warn     mobx-react-lite@"4.0.7" from the root project
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: next@16.1.0
+npm warn Found: @playwright/test@1.50.0
+npm warn node_modules/@playwright/test
+npm warn   dev @playwright/test@"1.50.0" from the root project
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional @playwright/test@"^1.51.1" from next@16.1.0
+npm warn node_modules/next
+npm warn   next@"16.1.0" from the root project
+npm warn   1 more (@storybook/nextjs)
+npm warn
+npm warn Conflicting peer dependency: @playwright/test@1.57.0
+npm warn node_modules/@playwright/test
+npm warn   peerOptional @playwright/test@"^1.51.1" from next@16.1.0
+npm warn   node_modules/next
+npm warn     next@"16.1.0" from the root project
+npm warn     1 more (@storybook/nextjs)
+npm warn ERESOLVE overriding peer dependency
+npm warn ERESOLVE overriding peer dependency
+npm error code ETARGET
+npm error notarget No matching version found for @storybook/addon-essentials@9.1.17.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: C:\Users\slave\AppData\Local\npm-cache\_logs\2026-01-14T22_46_10_875Z-debug-0.log

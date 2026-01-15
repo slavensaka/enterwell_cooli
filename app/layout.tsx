@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Metadata } from 'next';
 
 import { roboto } from '@/config/fonts';
@@ -48,6 +49,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeRegistry>
           {children}
         </ThemeRegistry>
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            duration: Infinity,
+            style: {
+              background: '#ffffff',
+              color: '#333',
+              fontWeight: 'bold',
+              minHeight: '70px',
+              borderRadius: '7px'
+            },
+            success: {
+              style: { borderLeft: '7px solid #60A917' },
+              duration: 3000
+            },
+            error: {
+              style: { borderLeft: '7px solid #CE352C' }
+            }
+          }}
+        />
       </body>
     </html>
   );

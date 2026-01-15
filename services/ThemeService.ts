@@ -6,16 +6,16 @@ import { getLocalStorageItem, setLocalStorageItem } from './LocalStorageService'
  * @static
  * @returns flag representing is the dark theme selected
  */
-export function getIsDarkMode() {
-  return getLocalStorageItem('isDarkMode') || false;
+export function getIsDarkMode(): boolean {
+  return getLocalStorageItem<boolean>('isDarkMode') || false;
 }
 
 /**
  * Saves the user's selected theme to the local storage.
  *
  * @static
- * @param {boolean} isDark is dark mode selected flag
+ * @param isDark is dark mode selected flag
  */
-export function setIsDarkMode(isDark) {
-  setLocalStorageItem('isDarkMode', isDark);
+export function setIsDarkMode(isDark: boolean): void {
+  setLocalStorageItem<boolean>('isDarkMode', isDark);
 }
