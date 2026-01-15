@@ -9,21 +9,8 @@ const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   images: {
-    remotePatterns: [
-      {
-        hostname: 'assets.pokemon.com',
-        protocol: 'https'
-      }
-    ],
+    remotePatterns: [],
     unoptimized: true // NOTE: Remove this line when you don't export app as static
-  },
-  turbopack: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js'
-      }
-    }
   },
   webpack(config) {
     // SVG handling for webpack (fallback when not using turbopack)
