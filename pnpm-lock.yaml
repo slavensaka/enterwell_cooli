@@ -165,6 +165,9 @@ importers:
       kill-port:
         specifier: 2.0.1
         version: 2.0.1
+      mini-css-extract-plugin:
+        specifier: ^2.10.0
+        version: 2.10.0(webpack@5.97.1(esbuild@0.27.2))
       postcss:
         specifier: 8.4.49
         version: 8.4.49
@@ -4843,6 +4846,12 @@ packages:
   min-indent@1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
+
+  mini-css-extract-plugin@2.10.0:
+    resolution: {integrity: sha512-540P2c5dYnJlyJxTaSloliZexv8rji6rY8FhQN+WF/82iHQfA23j/xtJx97L+mXOML27EqksSek/g4eK7jaL3g==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
 
   minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
@@ -11846,6 +11855,12 @@ snapshots:
   mimic-fn@2.1.0: {}
 
   min-indent@1.0.1: {}
+
+  mini-css-extract-plugin@2.10.0(webpack@5.97.1(esbuild@0.27.2)):
+    dependencies:
+      schema-utils: 4.3.3
+      tapable: 2.3.0
+      webpack: 5.97.1(esbuild@0.27.2)
 
   minimalistic-assert@1.0.1: {}
 

@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
@@ -13,7 +14,17 @@ const nextConfig = {
     remotePatterns: [],
     unoptimized: true // NOTE: Remove this line when you don't export app as static
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
+    // Add MiniCssExtractPlugin for CSS modules
+    if (!isServer) {
+      config.plugins.push(
+        new MiniCssExtractPlugin({
+          filename: 'static/css/[name].[contenthash].css',
+          chunkFilename: 'static/css/[name].[contenthash].css'
+        })
+      );
+    }
+
     // SVG handling for webpack (fallback when not using turbopack)
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg')
