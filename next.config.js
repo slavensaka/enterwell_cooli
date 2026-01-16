@@ -8,6 +8,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
+  turbopack: {}, // Silence Turbopack warning
   images: {
     remotePatterns: [],
     unoptimized: true // NOTE: Remove this line when you don't export app as static

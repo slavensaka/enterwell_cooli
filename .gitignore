@@ -39,3 +39,7 @@ yarn-error.log*
 .env.production.local
 
 full-stack-js-zadatak.pdf
+
+/generated/prisma
+
+/internal
