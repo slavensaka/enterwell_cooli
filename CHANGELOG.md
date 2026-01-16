@@ -12,13 +12,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Recipe domain model with DTO for server-client communication
 - RecipeMapper for data transformations
 - RecipeRepository with CRUD operations
-- RecipesView component with Material-UI responsive grid
+- RecipesView component with CSS Grid responsive layout
 - /recepti route displaying recipe list
 - Database seed script with 5 Croatian recipes
 - Webpack configuration to resolve Turbopack issues
+- mini-css-extract-plugin for CSS module compilation in webpack mode
+- Prisma generate postinstall hook for automatic client generation
 
 ### Changed
 - Configure Next.js to use webpack instead of Turbopack for development
 - Setup connection pooling with PostgreSQL adapter
+- Migrate from Material-UI Grid to native CSS Grid for better compatibility
+- Update pnpm lockfile for production deployment
+
+### Fixed
+- CSS Grid layout compatibility with Material-UI v7
+- Webpack CSS module compilation for local development
+- Vercel deployment build issues with frozen lockfile
 
 ## [1.0.0] - 2020-06-24
