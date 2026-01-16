@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Card, CardContent, Typography, Container, Grid2 } from '@mui/material';
+import { Box, Card, CardContent, Typography, Container } from '@mui/material';
 import { RecipeDTO } from '@/models/Recipe';
 
 type RecipesViewProps = {
@@ -19,25 +19,33 @@ export function RecipesView({ recipes }: RecipesViewProps) {
           Recepti
         </Typography>
 
-        <Grid2 container spacing={3}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: 'repeat(1, 1fr)',
+              sm: 'repeat(2, 1fr)',
+              md: 'repeat(3, 1fr)'
+            },
+            gap: 3
+          }}
+        >
           {recipes.map((recipe) => (
-            <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={recipe.id}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="h2" gutterBottom>
-                    {recipe.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Slug: {recipe.slug}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary">
-                    Created: {new Date(recipe.createdAt).toLocaleDateString('hr-HR')}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid2>
+            <Card key={recipe.id}>
+              <CardContent>
+                <Typography variant="h5" component="h2" gutterBottom>
+                  {recipe.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Slug: {recipe.slug}
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  Created: {new Date(recipe.createdAt).toLocaleDateString('hr-HR')}
+                </Typography>
+              </CardContent>
+            </Card>
           ))}
-        </Grid2>
+        </Box>
 
         {recipes.length === 0 && (
           <Box py={4}>
