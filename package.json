@@ -21,7 +21,8 @@
     "build-storybook": "storybook build",
     "stories-check": "echo 'storycap is incompatible with Storybook 10. Use Chromatic or similar tool for visual regression testing.'",
     "feature:remove": "node ./helpers/featureSelect.ts",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
