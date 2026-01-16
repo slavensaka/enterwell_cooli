@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Grid, Card, CardContent, Typography, Container } from '@mui/material';
+import { Box, Card, CardContent, Typography, Container, Grid2 } from '@mui/material';
 import { RecipeDTO } from '@/models/Recipe';
 
 type RecipesViewProps = {
@@ -19,9 +19,9 @@ export function RecipesView({ recipes }: RecipesViewProps) {
           Recepti
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid2 container spacing={3}>
           {recipes.map((recipe) => (
-            <Grid item xs={12} sm={6} md={4} key={recipe.id}>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={recipe.id}>
               <Card>
                 <CardContent>
                   <Typography variant="h5" component="h2" gutterBottom>
@@ -35,9 +35,9 @@ export function RecipesView({ recipes }: RecipesViewProps) {
                   </Typography>
                 </CardContent>
               </Card>
-            </Grid>
+            </Grid2>
           ))}
-        </Grid>
+        </Grid2>
 
         {recipes.length === 0 && (
           <Box py={4}>
