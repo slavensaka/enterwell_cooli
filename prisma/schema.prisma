@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,82 +6,60 @@ datasource db {
   provider = "postgresql"
 }
 
-// Recipe model - complete Coolinarika structure
 model Recipe {
-  id    String @id @default(uuid())
-  slug  String @unique
-
-  // Basic info
-  name  String
-  intro String? // Short description/intro
-
-  // Author info (later will be User relation)
-  authorUsername String
-  authorId       String? // For future User relation
-
-  // Main image
-  mainImageUrl String?
-
-  // Serving and tips
-  servingSuggestion String? @db.Text
-  tips              String? @db.Text
-
-  // Metadata / Tags
-  difficulty     DifficultyLevel?
-  servings       Int?             // Number of servings
-  prepTime       Int?             // Preparation time in minutes
-  cookTime       Int?             // Cooking time in minutes
-  cookingMethod  String?          // e.g., "Pečenje", "Kuhanje"
-  mealType       String?          // e.g., "Glavno jelo", "Desert"
-  season         String?          // e.g., "Ljeto", "Zima"
-  occasion       String?          // e.g., "Svakodnevno", "Blagdan"
-  region         String?          // e.g., "Hrvatska", "Italija"
-
-  // Relations
-  ingredients      Ingredient[]
-  preparationSteps PreparationStep[]
-
-  // Timestamps
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                String            @id @default(uuid())
+  slug              String            @unique
+  name              String
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  authorId          String?
+  authorUsername    String
+  cookTime          Int?
+  cookingMethod     String?
+  difficulty        DifficultyLevel?
+  intro             String?
+  mainImageUrl      String?
+  mealType          String?
+  occasion          String?
+  prepTime          Int?
+  region            String?
+  season            String?
+  servingSuggestion String?
+  servings          Int?
+  tips              String?
+  ingredients       Ingredient[]
+  preparationSteps  PreparationStep[]
 
   @@index([slug])
   @@index([authorUsername])
   @@index([createdAt])
 }
 
-// Ingredient model - N:1 with Recipe
 model Ingredient {
-  id       String @id @default(uuid())
+  id       String  @id @default(uuid())
   recipeId String
-
-  quantity String  // e.g., "18", "2"
-  unit     String? // e.g., "kom", "kašike", "ml"
-  name     String  // Ingredient name
-  order    Int     // Display order
-
-  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  quantity String
+  unit     String?
+  name     String
+  order    Int
+  recipe   Recipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
 
   @@index([recipeId])
 }
 
-// PreparationStep model - N:1 with Recipe
 model PreparationStep {
-  id       String @id @default(uuid())
-  recipeId String
-
+  id          String @id @default(uuid())
+  recipeId    String
   stepNumber  Int
-  description String @db.Text
-
-  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  description String
+  recipe      Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
 
   @@index([recipeId])
   @@index([recipeId, stepNumber])
 }
 
-// Difficulty enum
 enum DifficultyLevel {
-  EASY    // Lako
-  MEDIUM  // Srednje
-  HARD    // Teško
+  EASY
+  MEDIUM
+  HARD
 }

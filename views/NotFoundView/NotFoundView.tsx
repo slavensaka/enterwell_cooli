@@ -1,20 +1,15 @@
-// Styles import
-import styles from './NotFoundView.module.scss';
+'use client';
 
-/**
- * Function representing the view corresponding to the 404 page.
- *
- * @returns NotFoundView component
- */
+import React from 'react';
+import ErrorView from '@/views/ErrorView/ErrorView';
+
 export default function NotFoundView() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title} data-testid="heading">
-        404
-      </h1>
-      <h2 className={styles.subtitle}>
-        Just like Pokemons, this page doesn&apos;t exist
-      </h2>
-    </div>
+    <ErrorView
+      statusCode={404}
+      title="UPS, NEŠTO JE POŠLO PO ZLU!"
+      message="Ove stranice nema. Nestala je. Sakrila se. Pokušaj pronaći nešto drugo što ti se sviđa (tražilica) ili pogledaj preporuke koje ti nudimo na naslovnici."
+      emoji="🍽️"
+    />
   );
 }

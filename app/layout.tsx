@@ -45,7 +45,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={roboto.className}>
+      <body className={roboto.className} suppressHydrationWarning>
         <ThemeRegistry>
           {children}
         </ThemeRegistry>
