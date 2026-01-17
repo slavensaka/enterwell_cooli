@@ -98,7 +98,7 @@ export class RecipeMapper {
       prismaRecipe.intro,
       prismaRecipe.authorUsername,
       prismaRecipe.authorId,
-      prismaRecipe.mainImageUrl,
+      prismaRecipe.cdnPath,
       prismaRecipe.servingSuggestion,
       prismaRecipe.tips,
       prismaRecipe.difficulty,

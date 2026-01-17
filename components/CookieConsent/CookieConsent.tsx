@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import * as CookieConsent from 'vanilla-cookieconsent';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import { config } from './cookieconsent-config';
 
@@ -11,8 +10,13 @@ import { config } from './cookieconsent-config';
  */
 export default function CookieConsentComponent() {
     useEffect(() => {
-        // Initialize the cookie consent plugin
-        CookieConsent.run(config);
+        // Only run on client side
+        if (typeof window !== 'undefined') {
+            // Dynamic import to avoid SSR issues
+            import('vanilla-cookieconsent').then((CookieConsent) => {
+                CookieConsent.run(config);
+            });
+        }
     }, []);
 
     return null; // This component does not render anything itself, the plugin injects HTML to body

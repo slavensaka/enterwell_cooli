@@ -27,8 +27,7 @@ async function main() {
       name: 'Žabe na dalmatinski način',
       intro: 'Tradicionalni dalmatinski recept sa žabama, idealan uz palentu',
       authorUsername: 'loveangels',
-      mainImageUrl:
-        'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=450&fit=crop',
+      cdnPath: '/cdn/recipes/zabe-na-dalmatinski/zabe.webp',
       servingSuggestion: 'Poslužiti uz palentu (250g palenta / 1L vode)',
       tips: 'Važno je dobro ocediti žabe prije kuhanja i ne prekuhati ih jer postaju žilave.',
       difficulty: 'MEDIUM',
@@ -105,8 +104,7 @@ async function main() {
       name: 'Tradicionalna sarma',
       intro: 'Klasični recept za sarmu kakvu su naše bake pravile',
       authorUsername: 'sunny_side_up',
-      mainImageUrl:
-        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=450&fit=crop',
+      cdnPath: '/cdn/recipes/tradicionalna-sarma/sarma.webp',
       servingSuggestion: 'Poslužiti toplu sa kiselim vrhnjem',
       tips: 'Sarma je bolja ako odstoji dan-dva, tako da slobodno napravite dan prije.',
       difficulty: 'HARD',
@@ -171,8 +169,7 @@ async function main() {
       name: 'Čokoladna torta',
       intro: 'Bogata i sočna čokoladna torta',
       authorUsername: 'ljubicica71',
-      mainImageUrl:
-        'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=450&fit=crop',
+      cdnPath: '/cdn/recipes/cokoladna-torta/cokoladna_torta.webp',
       servingSuggestion: 'Ukrasite svježim bobičastim voćem',
       tips: 'Tortu čuvati u hladnjaku i poslužiti na sobnoj temperaturi.',
       difficulty: 'MEDIUM',
@@ -184,6 +181,7 @@ async function main() {
       season: null,
       occasion: 'Proslava',
       region: null,
+      tags: ['čokolada', 'torta', 'desert'],
 
       ingredients: {
         create: [
@@ -231,8 +229,7 @@ async function main() {
       name: 'Pizza Margarita',
       intro: 'Klasična talijanska pizza',
       authorUsername: 'coolinari_pro',
-      mainImageUrl:
-        'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=450&fit=crop',
+      cdnPath: '/cdn/recipes/pizza-margarita/pizza.webp',
       servingSuggestion: 'Poslužiti vrućу sa svježim bosiljkom',
       tips: 'Pećnicu zagrijati na maksimum, idealno 250°C.',
       difficulty: 'EASY',
@@ -244,6 +241,7 @@ async function main() {
       season: null,
       occasion: 'Svakodnevno',
       region: 'Italija',
+      tags: ['pizza', 'talijanska', 'klasična'],
 
       ingredients: {
         create: [
@@ -292,8 +290,7 @@ async function main() {
       name: 'Gulaš od divljači',
       intro: 'Aromatičan gulaš od srnetine',
       authorUsername: 'chef_master',
-      mainImageUrl:
-        'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=450&fit=crop',
+      cdnPath: '/cdn/recipes/gulas-od-divljaci/gulas.jpeg',
       servingSuggestion: 'Poslužiti sa domaćim njokama ili krumpirom',
       tips: 'Meso prethodno možete marinirati preko noći u crnom vinu sa začinskim travama.',
       difficulty: 'MEDIUM',
@@ -305,6 +302,7 @@ async function main() {
       season: 'Jesen',
       occasion: 'Svečano',
       region: 'Hrvatska',
+      tags: ['gulaš', 'divljač', 'srnetina'],
 
       ingredients: {
         create: [
