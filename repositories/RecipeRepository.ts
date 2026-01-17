@@ -13,10 +13,19 @@ export class RecipeRepository {
    */
   static async getAllDTO(): Promise<RecipeDTO[]> {
     const recipes = await prisma.recipe.findMany({
+      include: {
+        ingredients: {
+          orderBy: { order: 'asc' }
+        },
+        preparationSteps: {
+          orderBy: { stepNumber: 'asc' }
+        }
+      },
       orderBy: { createdAt: 'desc' }
     });
 
-    return RecipeMapper.toDTOArray(recipes);
+    const models = RecipeMapper.toModelArray(recipes);
+    return RecipeMapper.toDTOArray(models);
   }
 
   /**
@@ -25,6 +34,14 @@ export class RecipeRepository {
    */
   static async getAll(): Promise<Recipe[]> {
     const recipes = await prisma.recipe.findMany({
+      include: {
+        ingredients: {
+          orderBy: { order: 'asc' }
+        },
+        preparationSteps: {
+          orderBy: { stepNumber: 'asc' }
+        }
+      },
       orderBy: { createdAt: 'desc' }
     });
 
@@ -36,7 +53,15 @@ export class RecipeRepository {
    */
   static async getById(id: string): Promise<Recipe | null> {
     const recipe = await prisma.recipe.findUnique({
-      where: { id }
+      where: { id },
+      include: {
+        ingredients: {
+          orderBy: { order: 'asc' }
+        },
+        preparationSteps: {
+          orderBy: { stepNumber: 'asc' }
+        }
+      }
     });
 
     return recipe ? RecipeMapper.toModel(recipe) : null;
@@ -47,7 +72,15 @@ export class RecipeRepository {
    */
   static async getBySlug(slug: string): Promise<Recipe | null> {
     const recipe = await prisma.recipe.findUnique({
-      where: { slug }
+      where: { slug },
+      include: {
+        ingredients: {
+          orderBy: { order: 'asc' }
+        },
+        preparationSteps: {
+          orderBy: { stepNumber: 'asc' }
+        }
+      }
     });
 
     return recipe ? RecipeMapper.toModel(recipe) : null;
@@ -58,7 +91,15 @@ export class RecipeRepository {
    */
   static async create(data: Partial<Recipe>): Promise<Recipe> {
     const recipe = await prisma.recipe.create({
-      data: RecipeMapper.toCreateInput(data)
+      data: RecipeMapper.toCreateInput(data),
+      include: {
+        ingredients: {
+          orderBy: { order: 'asc' }
+        },
+        preparationSteps: {
+          orderBy: { stepNumber: 'asc' }
+        }
+      }
     });
 
     return RecipeMapper.toModel(recipe);
@@ -70,7 +111,15 @@ export class RecipeRepository {
   static async update(id: string, data: Partial<Recipe>): Promise<Recipe> {
     const recipe = await prisma.recipe.update({
       where: { id },
-      data: RecipeMapper.toUpdateInput(data)
+      data: RecipeMapper.toUpdateInput(data),
+      include: {
+        ingredients: {
+          orderBy: { order: 'asc' }
+        },
+        preparationSteps: {
+          orderBy: { stepNumber: 'asc' }
+        }
+      }
     });
 
     return RecipeMapper.toModel(recipe);

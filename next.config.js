@@ -11,7 +11,13 @@ const nextConfig = {
   productionBrowserSourceMaps: true,
   turbopack: {}, // Silence Turbopack warning
   images: {
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**'
+      }
+    ],
     unoptimized: true // NOTE: Remove this line when you don't export app as static
   },
   webpack(config, { isServer }) {

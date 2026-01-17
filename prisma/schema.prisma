@@ -9,14 +9,82 @@ datasource db {
   provider = "postgresql"
 }
 
-// Recipe model - simplified
+// Recipe model - complete Coolinarika structure
 model Recipe {
-  id        String   @id @default(uuid())
-  slug      String   @unique
-  name      String
+  id    String @id @default(uuid())
+  slug  String @unique
 
+  // Basic info
+  name  String
+  intro String? // Short description/intro
+
+  // Author info (later will be User relation)
+  authorUsername String
+  authorId       String? // For future User relation
+
+  // Main image
+  mainImageUrl String?
+
+  // Serving and tips
+  servingSuggestion String? @db.Text
+  tips              String? @db.Text
+
+  // Metadata / Tags
+  difficulty     DifficultyLevel?
+  servings       Int?             // Number of servings
+  prepTime       Int?             // Preparation time in minutes
+  cookTime       Int?             // Cooking time in minutes
+  cookingMethod  String?          // e.g., "Pečenje", "Kuhanje"
+  mealType       String?          // e.g., "Glavno jelo", "Desert"
+  season         String?          // e.g., "Ljeto", "Zima"
+  occasion       String?          // e.g., "Svakodnevno", "Blagdan"
+  region         String?          // e.g., "Hrvatska", "Italija"
+
+  // Relations
+  ingredients      Ingredient[]
+  preparationSteps PreparationStep[]
+
+  // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([slug])
+  @@index([authorUsername])
+  @@index([createdAt])
+}
+
+// Ingredient model - N:1 with Recipe
+model Ingredient {
+  id       String @id @default(uuid())
+  recipeId String
+
+  quantity String  // e.g., "18", "2"
+  unit     String? // e.g., "kom", "kašike", "ml"
+  name     String  // Ingredient name
+  order    Int     // Display order
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@index([recipeId])
+}
+
+// PreparationStep model - N:1 with Recipe
+model PreparationStep {
+  id       String @id @default(uuid())
+  recipeId String
+
+  stepNumber  Int
+  description String @db.Text
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@index([recipeId])
+  @@index([recipeId, stepNumber])
+}
+
+// Difficulty enum
+enum DifficultyLevel {
+  EASY    // Lako
+  MEDIUM  // Srednje
+  HARD    // Teško
 }

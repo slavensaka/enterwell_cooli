@@ -5,7 +5,8 @@
       "Bash(wc:*)",
       "Bash(psql:*)",
       "Bash(PGPASSWORD=03121986s psql:*)",
-      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" --version)"
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" --version)",
+      "Bash(pnpm prisma validate:*)"
     ]
   }
 }

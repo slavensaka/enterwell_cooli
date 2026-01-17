@@ -60,7 +60,7 @@ export function RecipesView({ recipes }: RecipesViewProps) {
               {/* Recipe Image with Favorite Button */}
               <div className={styles.imageWrapper}>
                 <Image
-                  src={getPlaceholderImage(index)}
+                  src={recipe.mainImageUrl || getPlaceholderImage(index)}
                   alt={recipe.name}
                   width={600}
                   height={450}
@@ -77,7 +77,7 @@ export function RecipesView({ recipes }: RecipesViewProps) {
               {/* Recipe Info */}
               <div className={styles.cardContent}>
                 <div className={styles.username}>
-                  {getPlaceholderUsername(index)}
+                  {recipe.authorUsername}
                 </div>
                 <h2 className={styles.recipeName}>
                   {recipe.name}
