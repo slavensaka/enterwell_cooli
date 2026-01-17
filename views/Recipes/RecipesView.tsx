@@ -2,6 +2,7 @@
 
 import { IconButton } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Link from 'next/link';
 import Image from 'next/image';
 import { RecipeDTO } from '@/models/Recipe';
 import styles from './RecipesView.module.scss';
@@ -59,13 +60,15 @@ export function RecipesView({ recipes }: RecipesViewProps) {
             <div key={recipe.id} className={styles.card}>
               {/* Recipe Image with Favorite Button */}
               <div className={styles.imageWrapper}>
-                <Image
-                  src={recipe.mainImageUrl || getPlaceholderImage(index)}
-                  alt={recipe.name}
-                  width={600}
-                  height={450}
-                  unoptimized
-                />
+                <Link href={`/recept/${recipe.slug}`}>
+                  <Image
+                    src={recipe.mainImageUrl || getPlaceholderImage(index)}
+                    alt={recipe.name}
+                    width={600}
+                    height={450}
+                    unoptimized
+                  />
+                </Link>
                 <IconButton
                   className={styles.favoriteButton}
                   aria-label="add to favorites"
@@ -80,7 +83,9 @@ export function RecipesView({ recipes }: RecipesViewProps) {
                   {recipe.authorUsername}
                 </div>
                 <h2 className={styles.recipeName}>
-                  {recipe.name}
+                  <Link href={`/recept/${recipe.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {recipe.name}
+                  </Link>
                 </h2>
               </div>
             </div>
