@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Webpack configuration to resolve Turbopack issues
 - mini-css-extract-plugin for CSS module compilation in webpack mode
 - Prisma generate postinstall hook for automatic client generation
+- Full Recipe schema with ingredients and steps - Ingredient and PreparationStep models with 1:N relations, extended Recipe with Coolinarika fields
 
 ### Changed
 - Configure Next.js to use webpack instead of Turbopack for development
