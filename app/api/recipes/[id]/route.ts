@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { RecipeRepository } from '@/repositories/RecipeRepository';
 import { RecipeMapper } from '@/mappers/RecipeMapper';
+import { z } from 'zod';
+import { RecipeInputSchema } from '@/models/validation';
 
 /**
  * GET /api/recipes/[id]
@@ -49,14 +51,15 @@ export async function PUT(
 ) {
     try {
         const { id } = params;
-        const body = await request.json();
+        const json = await request.json();
+
+        // Validate with Zod (partial allowed for updates)
+        const body = RecipeInputSchema.partial().parse(json);
 
         // Check if recipe exists
-        // Note: getById only checks ID. If user passed slug in URL for PUT, this might fail if we don't resolve slug to ID.
-        // For simplicity and strict REST, assume :id is the actual Database ID.
+        // ... getById/getBySlug logic ...
         let existingRecipe = await RecipeRepository.getById(id);
 
-        // If we want to support slug in URL for updates too:
         if (!existingRecipe) {
             existingRecipe = await RecipeRepository.getBySlug(id);
         }
@@ -69,10 +72,18 @@ export async function PUT(
         }
 
         // Update
-        const updatedRecipe = await RecipeRepository.update(existingRecipe.id, body); // Use the resolved ID
+        // We cast body to 'any' because strict Zod types vs Repo Partial<Recipe> mismatch
+        const updatedRecipe = await RecipeRepository.update(existingRecipe.id, body as any);
 
         return NextResponse.json(RecipeMapper.toDTO(updatedRecipe));
     } catch (error) {
+        if (error instanceof z.ZodError) {
+            return NextResponse.json(
+                { error: 'Validation Error', details: error.issues },
+                { status: 400 }
+            );
+        }
+
         console.error('Error updating recipe:', error);
         return NextResponse.json(
             { error: 'Failed to update recipe' },

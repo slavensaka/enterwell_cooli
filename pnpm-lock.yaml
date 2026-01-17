@@ -74,9 +74,15 @@ importers:
       typescript:
         specifier: 5.7.3
         version: 5.7.3
+      vanilla-cookieconsent:
+        specifier: github:Enterwell/cookieconsent
+        version: https://codeload.github.com/Enterwell/cookieconsent/tar.gz/f1cc9d0cc305851dd09b84da427628bce98d8f6b
       webpack:
         specifier: 5.97.1
         version: 5.97.1(esbuild@0.27.2)
+      zod:
+        specifier: ^4.3.5
+        version: 4.3.5
     devDependencies:
       '@eslint/eslintrc':
         specifier: 3.2.0
@@ -1428,6 +1434,17 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iabtechlabtcf/cmpapi@1.5.15':
+    resolution: {integrity: sha512-ls5hhGqUuLaBhJqzUvSMTQE8BnqBgdFB8APPC9ofD3tGI+T6GG53zDtHvK/eBYCQh6i0fJCIQ3ERVWkEflR0XA==}
+    peerDependencies:
+      '@iabtechlabtcf/core': '>=1.0.0'
+
+  '@iabtechlabtcf/core@1.5.15':
+    resolution: {integrity: sha512-fQj7VJPeKgcEjfHryj5n6wh6Gc63MkhZYNNt3mee0I+5Hsiq5G2QQ65TkZqHfwBG9vG7YjbQmADdWIEtwaxK3g==}
+
+  '@iabtechlabtcf/stub@1.5.15':
+    resolution: {integrity: sha512-phay49OXNXl/9Z3K0nthJL9IVn1sWXy8RaMEFhwMuqYEZcQ8Jw69ejqC/kdhOWPNWsdulF2ZtKgGBsVX1J0EAA==}
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -6194,6 +6211,10 @@ packages:
       typescript:
         optional: true
 
+  vanilla-cookieconsent@https://codeload.github.com/Enterwell/cookieconsent/tar.gz/f1cc9d0cc305851dd09b84da427628bce98d8f6b:
+    resolution: {tarball: https://codeload.github.com/Enterwell/cookieconsent/tar.gz/f1cc9d0cc305851dd09b84da427628bce98d8f6b}
+    version: 3.0.1
+
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -7674,6 +7695,14 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iabtechlabtcf/cmpapi@1.5.15(@iabtechlabtcf/core@1.5.15)':
+    dependencies:
+      '@iabtechlabtcf/core': 1.5.15
+
+  '@iabtechlabtcf/core@1.5.15': {}
+
+  '@iabtechlabtcf/stub@1.5.15': {}
 
   '@img/colour@1.0.0':
     optional: true
@@ -13376,6 +13405,12 @@ snapshots:
   valibot@1.2.0(typescript@5.7.3):
     optionalDependencies:
       typescript: 5.7.3
+
+  vanilla-cookieconsent@https://codeload.github.com/Enterwell/cookieconsent/tar.gz/f1cc9d0cc305851dd09b84da427628bce98d8f6b:
+    dependencies:
+      '@iabtechlabtcf/cmpapi': 1.5.15(@iabtechlabtcf/core@1.5.15)
+      '@iabtechlabtcf/core': 1.5.15
+      '@iabtechlabtcf/stub': 1.5.15
 
   vary@1.1.2: {}
 

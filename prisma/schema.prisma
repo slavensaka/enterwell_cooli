@@ -18,15 +18,16 @@ model Recipe {
   cookingMethod     String?
   difficulty        DifficultyLevel?
   intro             String?
-  mainImageUrl      String?
+  cdnPath           String?
   mealType          String?
   occasion          String?
   prepTime          Int?
   region            String?
   season            String?
   servingSuggestion String?
-  servings          Int?
+  servings          Int
   tips              String?
+  tags              String[]
   ingredients       Ingredient[]
   preparationSteps  PreparationStep[]
 

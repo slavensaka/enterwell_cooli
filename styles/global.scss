@@ -1,8 +1,82 @@
-body, html, #__next {
+body,
+html,
+#__next {
 	height: 100%;
 	width: 100%;
 }
 
 a:visited {
 	color: inherit;
+}
+
+/* Cookie Consent Overrides to match Coolinarika rules */
+:root {
+	--cc-font-family: 'Roboto', sans-serif;
+
+	/* Coolinarika Theme Colors */
+	--cc-btn-primary-bg: #FE000C;
+	--cc-btn-primary-border-color: #FE000C;
+	--cc-btn-primary-hover-bg: #E3000B;
+	/* Darker red on hover */
+	--cc-btn-primary-hover-border-color: #E3000B;
+
+	--cc-btn-secondary-bg: #FFFFFF;
+	/* Secondary is often white with border */
+	--cc-btn-secondary-border-color: #FE000C;
+	--cc-btn-secondary-color: #FE000C;
+	--cc-btn-secondary-hover-bg: #FFF0F0;
+	--cc-btn-secondary-hover-border-color: #FE000C;
+	--cc-btn-secondary-hover-color: #FE000C;
+
+	--cc-toggle-on-bg: #FE000C;
+	--cc-link-color: #FE000C;
+	--cc-modal-border-radius: 10px;
+	--cc-btn-border-radius: 50px;
+}
+
+#cc-main .cm {
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+#cc-main .cm .cm-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+#cc-main .cm .btn {
+	border-radius: 50px;
+	font-weight: 600;
+	text-transform: none;
+	/* Coolinarika uses sentence case usually */
+	padding: 0.8rem 1.5rem;
+}
+
+/* Make "Accept Necessary" look secondary if it's not the primary action */
+#cc-main .cm .btn--secondary {
+	background-color: transparent;
+	color: #141313;
+	border: 1px solid #ccc;
+}
+
+#cc-main .cm .btn--secondary:hover {
+	background-color: #eee;
+	border-color: #bbb;
+}
+
+#cc-main .cm-footer {
+	border-top: 1px solid #eee;
+	margin-top: 1.5rem;
+	padding-top: 1rem;
+	font-size: 0.85rem;
+}
+
+#cc-main .cm-footer a {
+	color: #555;
+	text-decoration: underline;
+	margin-right: 1rem;
+}
+
+#cc-main .cm-footer a:hover {
+	color: #141313;
 }

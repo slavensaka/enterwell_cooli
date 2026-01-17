@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { roboto } from '@/config/fonts';
 import ThemeRegistry from '@/components/providers/ThemeRegistry/ThemeRegistry';
 import '@/styles/global.scss';
+import CookieConsentComponent from '@/components/CookieConsent/CookieConsent';
 
 // Checks whether the app is running in a production or development mode
 const isProduction = process.env.NODE_ENV === 'production';
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body className={roboto.className} suppressHydrationWarning>
         <ThemeRegistry>
+          <CookieConsentComponent />
           {children}
         </ThemeRegistry>
         <Toaster
