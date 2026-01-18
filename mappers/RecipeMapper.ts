@@ -13,6 +13,7 @@ import {
   Ingredient as PrismaIngredient,
   PreparationStep as PrismaPreparationStep
 } from '@prisma/client';
+import { CdnUtils } from '@/helpers/CdnUtils';
 
 /**
  * Prisma Recipe with relations included
@@ -100,7 +101,7 @@ export class RecipeMapper {
       prismaRecipe.intro,
       prismaRecipe.authorUsername,
       prismaRecipe.authorId,
-      prismaRecipe.cdnPath,
+      CdnUtils.getImageUrl(prismaRecipe.cdnPath),
       prismaRecipe.servingSuggestion,
       prismaRecipe.tips,
       prismaRecipe.difficulty as DifficultyLevel,
@@ -175,7 +176,7 @@ export class RecipeMapper {
       intro: model.intro,
       authorUsername: model.authorUsername!,
       authorId: model.authorId,
-      cdnPath: model.mainImageUrl,
+      cdnPath: CdnUtils.extractCdnPath(model.mainImageUrl || ''),
       servingSuggestion: model.servingSuggestion,
       tips: model.tips,
       difficulty: model.difficulty,
@@ -201,7 +202,7 @@ export class RecipeMapper {
     if (model.intro !== undefined) data.intro = model.intro;
     if (model.authorUsername !== undefined) data.authorUsername = model.authorUsername;
     if (model.authorId !== undefined) data.authorId = model.authorId;
-    if (model.mainImageUrl !== undefined) data.cdnPath = model.mainImageUrl;
+    if (model.mainImageUrl !== undefined) data.cdnPath = CdnUtils.extractCdnPath(model.mainImageUrl);
     if (model.servingSuggestion !== undefined) data.servingSuggestion = model.servingSuggestion;
     if (model.tips !== undefined) data.tips = model.tips;
     if (model.difficulty !== undefined) data.difficulty = model.difficulty;
