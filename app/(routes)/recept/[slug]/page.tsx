@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 import { RecipeRepository } from '@/repositories/RecipeRepository';
+import { RecipeMapper } from '@/mappers/RecipeMapper';
 import RecipeDetailView from '@/views/RecipeDetail/RecipeDetailView';
 
 type Props = {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 };
 
 export const revalidate = 60; // ISR: Revalidate every 60 seconds
@@ -22,12 +23,8 @@ export async function generateStaticParams() {
 }
 
 export default async function RecipePage({ params }: Props) {
-    // Since we are using an async component, we can await params
-    // However, in standard Next.js 13/14, params is an object, not a promise here unless it's a very new version
-    // Safety check: accessing params directly
-    // In newer Next.js versions (15+ or specific 14 config), params is a Promise.
-    // We should await it to be safe and compatible.
-    const resolvedParams = await Promise.resolve(params);
+    // In Next.js 15+, params is a Promise
+    const resolvedParams = await params;
     const slug = resolvedParams.slug;
 
     // We need to fetch the recipe by slug
@@ -45,10 +42,7 @@ export default async function RecipePage({ params }: Props) {
     }
 
     // We need to convert the model to a plain object (DTO) because Class instances with methods cannot be passed to Client Components
-    const recipeDTO = JSON.parse(JSON.stringify(recipeModel));
-    // Ideally we would use RecipeMapper.toDTO(recipeModel) but let's check if it exists or we can just serialise it.
-    // Inspecting RecipeRepository showed RecipeMapper usage. 
-    // Since we can't see RecipeMapper right now, simple JSON serialization is a safe bet for "Plain Object" requirement.
+    const recipeDTO = RecipeMapper.toDTO(recipeModel);
 
     return <RecipeDetailView recipe={recipeDTO} />;
 }

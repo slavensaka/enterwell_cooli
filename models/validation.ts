@@ -36,9 +36,8 @@ export const RecipeInputSchema = z.object({
     cookTime: z.number().int().min(0).nullable().optional(),
     cookingMethod: z.string().nullable().optional(),
     mealType: z.string().nullable().optional(),
-    category: z.nativeEnum(RecipeCategory, {
-        required_error: "Recipe category is required",
-        invalid_type_error: "Invalid recipe category"
+    category: z.nativeEnum(RecipeCategory).refine(val => val !== undefined, {
+        message: "Recipe category is required"
     }), // OBVEZNO polje
     season: z.string().nullable().optional(),
     occasion: z.string().nullable().optional(),

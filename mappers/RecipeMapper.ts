@@ -4,7 +4,9 @@ import {
   Ingredient,
   IngredientDTO,
   PreparationStep,
-  PreparationStepDTO
+  PreparationStepDTO,
+  DifficultyLevel,
+  RecipeCategory
 } from '@/models/Recipe';
 import {
   Recipe as PrismaRecipe,
@@ -101,13 +103,13 @@ export class RecipeMapper {
       prismaRecipe.cdnPath,
       prismaRecipe.servingSuggestion,
       prismaRecipe.tips,
-      prismaRecipe.difficulty,
+      prismaRecipe.difficulty as DifficultyLevel,
       prismaRecipe.servings,
       prismaRecipe.prepTime,
       prismaRecipe.cookTime,
       prismaRecipe.cookingMethod,
       prismaRecipe.mealType,
-      prismaRecipe.category, // OBVEZNO polje
+      prismaRecipe.category as RecipeCategory, // OBVEZNO polje
       prismaRecipe.season,
       prismaRecipe.occasion,
       prismaRecipe.region,
