@@ -26,7 +26,7 @@ export default function RecipeDetailView({ recipe }: Props) {
         if (cdnPath) {
             return `${process.env.NEXT_PUBLIC_CDN_BASE_URL || ''}${cdnPath}`;
         }
-        return 'https://via.placeholder.com/600x400.jpg?text=No+Image';
+        return 'https://placehold.co/600x400.jpg?text=No+Image';
     };
 
     return (
