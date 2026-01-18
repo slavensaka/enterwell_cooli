@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { DifficultyLevel } from './Recipe';
+import { DifficultyLevel, RecipeCategory } from './Recipe';
 
 // Schema for Ingredient creation/update
 export const IngredientSchema = z.object({
@@ -36,6 +36,10 @@ export const RecipeInputSchema = z.object({
     cookTime: z.number().int().min(0).nullable().optional(),
     cookingMethod: z.string().nullable().optional(),
     mealType: z.string().nullable().optional(),
+    category: z.nativeEnum(RecipeCategory, {
+        required_error: "Recipe category is required",
+        invalid_type_error: "Invalid recipe category"
+    }), // OBVEZNO polje
     season: z.string().nullable().optional(),
     occasion: z.string().nullable().optional(),
     region: z.string().nullable().optional(),

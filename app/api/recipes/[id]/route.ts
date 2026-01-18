@@ -11,10 +11,11 @@ import { RecipeInputSchema } from '@/models/validation';
  */
 export async function GET(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const { id } = params;
+        const resolvedParams = await params;
+        const { id } = resolvedParams;
 
         // Try finding by ID first (UUID format usually)
         let recipe = await RecipeRepository.getById(id);
@@ -47,10 +48,11 @@ export async function GET(
  */
 export async function PUT(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const { id } = params;
+        const resolvedParams = await params;
+        const { id } = resolvedParams;
         const json = await request.json();
 
         // Validate with Zod (partial allowed for updates)
@@ -98,10 +100,11 @@ export async function PUT(
  */
 export async function DELETE(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const { id } = params;
+        const resolvedParams = await params;
+        const { id } = resolvedParams;
 
         // Resolve slug to ID if needed
         let recipeToDelete = await RecipeRepository.getById(id);

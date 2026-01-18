@@ -18,6 +18,11 @@ const customJestConfig = {
   // The root directory that Jest should scan for tests and modules within
   rootDir: './tests/unit',
 
+  // Module name mapper for path aliases
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/../../$1',
+  },
+
   // The paths to modules that run some code to configure
   // or set up the testing environment before each test
   // setupFiles: [],

@@ -3,10 +3,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { RecipeDTO } from '@/models/Recipe';
+import { RecipeHelper } from '@/helpers/RecipeHelper';
 import styles from './RecipeDetailView.module.scss';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import EqualizerIcon from '@mui/icons-material/Equalizer'; // Signal/Difficulty
+import CategoryIcon from '@mui/icons-material/Category';
 
 type Props = {
     recipe: RecipeDTO;
@@ -64,7 +66,7 @@ export default function RecipeDetailView({ recipe }: Props) {
                         />
                     </div>
 
-                    {/* Meta Bar: Time, Servings, Difficulty */}
+                    {/* Meta Bar: Time, Servings, Difficulty, Category */}
                     <div className={styles.metaBar}>
                         {recipe.prepTime && (
                             <div className={styles.metaItem}>
@@ -89,6 +91,15 @@ export default function RecipeDetailView({ recipe }: Props) {
                                 <span className={styles.value}>{recipe.difficulty}</span>
                             </div>
                         )}
+
+                        {/* Category - OBVEZNO polje */}
+                        <div className={styles.metaItem}>
+                            <CategoryIcon className={styles.icon} />
+                            <span className={styles.label}>Kategorija</span>
+                            <span className={styles.value}>
+                                {recipe.category ? RecipeHelper.getCategoryDisplayName(recipe.category) : 'Nije definirano'}
+                            </span>
+                        </div>
                     </div>
 
                     {/* Preparation Steps */}
@@ -111,7 +122,7 @@ export default function RecipeDetailView({ recipe }: Props) {
 
                     {/* Tips Section (Optional) */}
                     {recipe.tips && (
-                        <div className={styles.stepsContainer}>
+                        <div className={styles.tipsContainer}>
                             <h2 className={styles.sectionTitle}>Savjet</h2>
                             <p className={styles.bodyText}>{recipe.tips}</p>
                         </div>

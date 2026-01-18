@@ -8,6 +8,22 @@ export enum DifficultyLevel {
 }
 
 /**
+ * Recipe category enum for meal groups
+ */
+export enum RecipeCategory {
+  GLAVNA_JELA = 'GLAVNA_JELA',
+  DESERTI = 'DESERTI',
+  KRUH_I_PECIVA = 'KRUH_I_PECIVA',
+  PREDJELA = 'PREDJELA',
+  JUHE = 'JUHE',
+  SALATE = 'SALATE',
+  PICA = 'PICA',
+  SOKOVI_I_NAPICI = 'SOKOVI_I_NAPICI',
+  PRILOZI = 'PRILOZI',
+  UMACI = 'UMACI'
+}
+
+/**
  * Ingredient model for recipe ingredients
  */
 export class Ingredient {
@@ -53,6 +69,7 @@ export class Recipe {
     public cookTime: number | null,
     public cookingMethod: string | null,
     public mealType: string | null,
+    public category: RecipeCategory, // OBVEZNO - grupa jela
     public season: string | null,
     public occasion: string | null,
     public region: string | null,
@@ -105,6 +122,7 @@ export type RecipeDTO = {
   cookTime: number | null;
   cookingMethod: string | null;
   mealType: string | null;
+  category: RecipeCategory; // OBVEZNO - grupa jela
   season: string | null;
   occasion: string | null;
   region: string | null;

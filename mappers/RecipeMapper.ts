@@ -107,6 +107,7 @@ export class RecipeMapper {
       prismaRecipe.cookTime,
       prismaRecipe.cookingMethod,
       prismaRecipe.mealType,
+      prismaRecipe.category, // OBVEZNO polje
       prismaRecipe.season,
       prismaRecipe.occasion,
       prismaRecipe.region,
@@ -144,6 +145,7 @@ export class RecipeMapper {
       cookTime: recipe.cookTime,
       cookingMethod: recipe.cookingMethod,
       mealType: recipe.mealType,
+      category: recipe.category, // OBVEZNO polje
       season: recipe.season,
       occasion: recipe.occasion,
       region: recipe.region,
@@ -171,7 +173,7 @@ export class RecipeMapper {
       intro: model.intro,
       authorUsername: model.authorUsername!,
       authorId: model.authorId,
-      mainImageUrl: model.mainImageUrl,
+      cdnPath: model.mainImageUrl,
       servingSuggestion: model.servingSuggestion,
       tips: model.tips,
       difficulty: model.difficulty,
@@ -180,6 +182,7 @@ export class RecipeMapper {
       cookTime: model.cookTime,
       cookingMethod: model.cookingMethod,
       mealType: model.mealType,
+      category: model.category!, // OBVEZNO polje
       season: model.season,
       occasion: model.occasion,
       region: model.region
@@ -190,24 +193,25 @@ export class RecipeMapper {
    * Maps Recipe model to Prisma Recipe update input.
    */
   static toUpdateInput(model: Partial<Recipe>) {
-    return {
-      slug: model.slug,
-      name: model.name,
-      intro: model.intro,
-      authorUsername: model.authorUsername,
-      authorId: model.authorId,
-      mainImageUrl: model.mainImageUrl,
-      servingSuggestion: model.servingSuggestion,
-      tips: model.tips,
-      difficulty: model.difficulty,
-      servings: model.servings,
-      prepTime: model.prepTime,
-      cookTime: model.cookTime,
-      cookingMethod: model.cookingMethod,
-      mealType: model.mealType,
-      season: model.season,
-      occasion: model.occasion,
-      region: model.region
-    };
+    const data: any = {};
+    if (model.slug !== undefined) data.slug = model.slug;
+    if (model.name !== undefined) data.name = model.name;
+    if (model.intro !== undefined) data.intro = model.intro;
+    if (model.authorUsername !== undefined) data.authorUsername = model.authorUsername;
+    if (model.authorId !== undefined) data.authorId = model.authorId;
+    if (model.mainImageUrl !== undefined) data.cdnPath = model.mainImageUrl;
+    if (model.servingSuggestion !== undefined) data.servingSuggestion = model.servingSuggestion;
+    if (model.tips !== undefined) data.tips = model.tips;
+    if (model.difficulty !== undefined) data.difficulty = model.difficulty;
+    if (model.servings !== undefined) data.servings = model.servings;
+    if (model.prepTime !== undefined) data.prepTime = model.prepTime;
+    if (model.cookTime !== undefined) data.cookTime = model.cookTime;
+    if (model.cookingMethod !== undefined) data.cookingMethod = model.cookingMethod;
+    if (model.mealType !== undefined) data.mealType = model.mealType;
+    if (model.category !== undefined) data.category = model.category; // OBVEZNO polje
+    if (model.season !== undefined) data.season = model.season;
+    if (model.occasion !== undefined) data.occasion = model.occasion;
+    if (model.region !== undefined) data.region = model.region;
+    return data;
   }
 }

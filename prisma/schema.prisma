@@ -20,6 +20,7 @@ model Recipe {
   intro             String?
   cdnPath           String?
   mealType          String?
+  category          RecipeCategory    // OBVEZNO - grupa jela
   occasion          String?
   prepTime          Int?
   region            String?
@@ -34,6 +35,7 @@ model Recipe {
   @@index([slug])
   @@index([authorUsername])
   @@index([createdAt])
+  @@index([category])
 }
 
 model Ingredient {
@@ -63,4 +65,17 @@ enum DifficultyLevel {
   EASY
   MEDIUM
   HARD
+}
+
+enum RecipeCategory {
+  GLAVNA_JELA
+  DESERTI
+  KRUH_I_PECIVA
+  PREDJELA
+  JUHE
+  SALATE
+  PICA
+  SOKOVI_I_NAPICI
+  PRILOZI
+  UMACI
 }
