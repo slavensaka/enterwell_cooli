@@ -5,17 +5,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://localhost:3000';
 
   // Static routes
-  const staticRoutes = [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/recepti`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
   ];
@@ -27,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     recipeRoutes = recipes.map((recipe) => ({
       url: `${baseUrl}/recept/${recipe.slug}`,
       lastModified: recipe.updatedAt,
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     }));
   } catch (error) {
