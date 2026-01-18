@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "dev-open": "start http://localhost:3000 && pnpm dev",
-    "build": "next build --webpack",
+    "build": "prisma generate && next build --webpack",
     "build-analyze": "cross-env ANALYZE=true pnpm build",
     "export": "rimraf ./out && rimraf ./.next && cross-env NODE_ENV=production next build && next export",
     "start": "next start",
