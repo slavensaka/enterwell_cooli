@@ -11,16 +11,8 @@ type Props = {
 
 export const revalidate = 60; // ISR: Revalidate every 60 seconds
 
-// Generate static params for all existing recipes at build time
-export async function generateStaticParams() {
-    // We need a lightweight method to just fetch all slugs
-    // Ideally RecipeRepository.getAllSlugs(), but getAllDTO is fine for now if not too large
-    const recipes = await RecipeRepository.getAllDTO();
-
-    return recipes.map((recipe) => ({
-        slug: recipe.slug,
-    }));
-}
+// Disable static generation - use ISR (Incremental Static Regeneration) instead
+export const dynamicParams = true;
 
 export default async function RecipePage({ params }: Props) {
     // In Next.js 15+, params is a Promise
