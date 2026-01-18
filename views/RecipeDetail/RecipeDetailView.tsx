@@ -88,7 +88,7 @@ export default function RecipeDetailView({ recipe }: Props) {
                             <div className={styles.metaItem}>
                                 <EqualizerIcon className={styles.icon} />
                                 <span className={styles.label}>Težina</span>
-                                <span className={styles.value}>{recipe.difficulty}</span>
+                                <span className={styles.value}>{RecipeHelper.getDifficultyDisplayName(recipe.difficulty)}</span>
                             </div>
                         )}
 

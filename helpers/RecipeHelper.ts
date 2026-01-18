@@ -1,4 +1,4 @@
-import { RecipeCategory } from '@/models/Recipe';
+import { RecipeCategory, DifficultyLevel } from '@/models/Recipe';
 
 /**
  * Helper functions for recipe-related operations.
@@ -42,5 +42,20 @@ export class RecipeHelper {
     const categories = Object.values(RecipeCategory);
     
     return categories.find(cat => cat === upperStr) || null;
+  }
+
+  /**
+   * Get display name for difficulty level in Croatian.
+   */
+  static getDifficultyDisplayName(difficulty: DifficultyLevel | null): string {
+    if (!difficulty) return '';
+    
+    const difficultyNames: Record<DifficultyLevel, string> = {
+      [DifficultyLevel.EASY]: 'Jednostavno',
+      [DifficultyLevel.MEDIUM]: 'Srednje zahtjevno',
+      [DifficultyLevel.HARD]: 'Složeno'
+    };
+
+    return difficultyNames[difficulty] || difficulty;
   }
 }
