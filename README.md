@@ -14,13 +14,19 @@ A modern recipe management application built with Next.js 16, React 19, Prisma O
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/slavensaka/enterwell_cooli.git
    cd enterwell_cooli
    ```
 
 2. **Install dependencies**
+   Make sure you have **pnpm** installed globally before proceeding.
+   ```
+   npm install -g pnpm
+   pnpm --version
+   ```
+   then 
    ```bash
-   pnpm install
+   pnpm install --loglevel info
    ```
 
 3. **Configure environment variables**
@@ -30,10 +36,21 @@ A modern recipe management application built with Next.js 16, React 19, Prisma O
    cp .env.local.example .env.local
    ```
    
-   Edit `.env.local` and set your database connection:
+   Edit `.env.local` and set your postgress database connection:
+   
    ```env
-   DATABASE_URL="postgresql://username:password@host:5432/database_name?sslmode=require"
+   DB_USER=example
+   DB_HOST=localhost
+   DB_NAME=example
+   DB_PASSWORD=example
+   DB_PORT=5432
+   
+   DATABASE_URL="postgresql://DB_USER:DB_PASSWORD@DB_HOST:5432/DB_NAME?sslmode=require"
+
+   # CDN Configuration
+   NEXT_PUBLIC_CDN_BASE_URL=http://localhost:3000
    ```
+   - `DB_USER`, `DB_PASSWORD`, `DB_HOST`, and `DB_NAME` are the environment variables used to construct the `DATABASE_URL` for PostgreSQL.
 
 4. **Set up the database**
    
